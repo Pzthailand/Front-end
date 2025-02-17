@@ -47,7 +47,7 @@ function About(){
         <div className="About-container" >
                 <img src={Project} />
             <div style={{display:"block",width:400}}>
-                <p>Project</p>
+                <p style={{fontWeight:600}}>Project</p>
                 <p>Front-end : <a href="https://github.com/Pzthailand/Front-end.git" target="_blank">https://github.com/Pzthailand/Front-end.git</a></p>
                 <p>Back-end : <a href="https://github.com/Pzthailand/Back-end.git" target="_blank">https://github.com/Pzthailand/Back-end.git</a></p>
             </div>
