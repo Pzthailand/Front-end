@@ -1,0 +1,13 @@
+.error-message {
+    color: red; /* Red color for error messages */
+    font-size: 12px; /* Smaller font size for messages */
+    text-align: left; /* Center-aligns error messages */
+    margin-left: 5px;
+}
+
+.error-message span{
+    color: red; /* Red color for error messages */
+    font-size: 12px; /* Smaller font size for messages */
+    text-align: left; /* Center-aligns error messages */
+    margin-left: 5px;
+}

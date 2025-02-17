@@ -1,0 +1,37 @@
+.productUpdate-container{
+  display: block;
+}
+
+.productUpdate-label {
+  margin-bottom: 2px;
+  font-size: 12px;
+  float: left;
+}
+
+.productUpdate-input {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 5px;
+  cursor: text;
+  float: center;
+  text-align:left;
+  float: left;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 5px;
+}
+
+.productUpdate-textarea {
+  font-size: 12px;
+  margin-bottom: 5px;
+  height: 100px;
+  width: 100%;
+  cursor: text;
+}
+
+.Productimages {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  border: 2px solid black;
+}

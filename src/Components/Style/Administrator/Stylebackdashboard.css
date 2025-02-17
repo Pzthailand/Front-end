@@ -1,0 +1,12 @@
+.style-back-dashboard{
+    font-size: 13px;
+    color: white;
+    background-color: blueviolet;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .style-back-dashboard:hover{
+    color: white;
+    background-color: black;
+  }

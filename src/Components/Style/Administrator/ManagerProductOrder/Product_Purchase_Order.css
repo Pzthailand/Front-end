@@ -1,0 +1,18 @@
+/* ProductPurchaseOrder.css */
+@media print {
+    /* Hide everything except the print area */
+    body * {
+      visibility: hidden;
+      width: 100%;
+    }
+  
+    /* Show only the print section */
+    .print-section, .print-section * {
+      visibility: visible;
+    }
+  
+    /* You can also hide the button when printing */
+    button {
+      display: none;
+    }
+  }

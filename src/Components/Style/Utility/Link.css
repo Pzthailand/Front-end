@@ -1,0 +1,9 @@
+.link-manager-product {
+    font-size: 13px;
+    color: black;
+    margin-top: 20px;
+  }
+
+  .link-manager-product:hover{
+    color: slateblue;
+  }

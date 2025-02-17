@@ -1,0 +1,13 @@
+#root {
+  max-width: auto; /*1920px 1280px*/
+  margin: 0 auto; /*width all page*/
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  /*custom body index*/
+  /*
+  margin-left: 5rem;
+  margin-right: 5rem;
+  */
+}

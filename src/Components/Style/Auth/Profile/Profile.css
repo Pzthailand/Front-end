@@ -1,0 +1,66 @@
+/* Container for the profile form */
+.profile-form {
+  width: 350px;
+  margin: 20px auto;
+  padding: 0px 75px 0px 75px;
+  border-radius: 0px;
+  background-color: #f9f9f9;
+}
+
+/* Style for all labels in the profile form */
+.profile-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Style for input fields and textarea in the profile form */
+.profile-form input{
+  width: 100%;
+  height: 35px;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.profile-form input:hover {
+  border-color: blueviolet;
+}
+
+/* Style for the button in the profile form */
+.profile-button {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;
+}
+
+.profile-button:hover{
+  color: black;
+}
+
+.profileimages {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgb(167, 165, 165);
+}
+
+
+/* Responsive design for the profile form */
+@media (max-width: 600px) {
+  .profile-form {
+      padding: 10px;
+  }
+
+  .profile-form .profile-button {
+      padding: 8px 10px;
+      font-size: 14px;
+  }
+}
+ 

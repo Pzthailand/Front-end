@@ -1,0 +1,34 @@
+ /*icon*/
+ .icon-style {
+    width: 25px;
+    height: 25px;
+    float: left; 
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .icon-style:hover {
+    transform: scale(1.5); /* Slightly enlarges the icon */
+  }
+
+  @media (max-width: 768px) {
+
+    .icon-style {
+      width: 10px;
+      height: 10px;
+      float: left; 
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .icon-style:hover {
+      transform: scale(1.5); /* Slightly enlarges the icon */
+    }
+
+  }

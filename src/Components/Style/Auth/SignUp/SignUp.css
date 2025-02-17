@@ -1,0 +1,137 @@
+  /*1.check email*/
+
+  .signup-verify-container {
+    display: inline-block;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+  }
+  
+  .signup-verify-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  
+  .signup-verify-label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .signup-verify-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    outline: none;
+  }
+  
+  .signup-verify-input:hover {
+    border-color: blueviolet;
+  }
+  
+  input[readonly] {
+    background-color: #e9ecef; /* Light gray background for read-only fields */
+  }
+  
+  .signup-verify-button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: blueviolet; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100px;
+    float: right;
+  }
+  
+  .signup-verify:hover {
+    color: black; 
+  }
+  
+   /*2.verify style in utility*/
+  
+  /*3 sign up*/
+  .signup-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: none;
+    background-color: white;
+    border-radius: 0px;
+    padding-left: 50px;
+    padding-right: 120px;
+  }
+  
+  .signup-container div {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    font-weight: 500;
+  }
+
+  .signup-container label{
+    float: right;
+    font-size: 12px;
+    font-weight: 500;
+    color: black; 
+  }
+
+  .signup-container input{
+    font-size: 12px;
+    font-weight: 500;
+    height: 35px;
+    width: 300px;
+  }
+
+  .signup-container input:hover{
+   border-color: blueviolet;
+   outline: none; 
+  }
+
+
+.select-gender{
+ width: 15px;
+ height: 15px;
+ cursor: pointer;
+}
+
+.gender-label{
+  float: left;
+}
+
+.create-account-button{
+  height: 40px;
+  width: 150px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 2px;
+  margin-left: 80px;
+}
+
+.create-account-button:hover{
+  color: black;
+}
+
+
+.signup-error-message {
+  color: red; /* Change the text color to red */
+  font-size: 11px; /* Slightly smaller font size */
+  margin-top: 2px; /* Add some space above the error message */
+  float: left;
+}
+
+
+/* Optional: Add styles for the input fields to show they have errors */
+input:invalid, textarea:invalid {
+  border: 1px solid red; /* Change border color to red for invalid fields */
+}
+
+input:focus:invalid, textarea:focus:invalid {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px red; /* Add a shadow effect */
+}

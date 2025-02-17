@@ -1,0 +1,27 @@
+.profile-item1 { grid-area: header; }
+.profile-item2 { grid-area: main; }
+.profile-item3 { grid-area: right; }
+.profile-item4 { grid-area: footer; }
+
+#root{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main right right right'
+    'footer footer footer footer footer footer';   
+  gap: 5px;
+  background-color: none;
+}
+
+.profile-container > div {
+  background-color: none;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
