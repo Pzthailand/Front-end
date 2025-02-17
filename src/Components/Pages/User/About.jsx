@@ -46,7 +46,11 @@ function About(){
 
         <div className="About-container" >
                 <img src={Project} />
-            <p>Project : </p>
+            <div style={{display:"block",width:400}}>
+                <p>Project</p>
+                <p>Front-end : <a href="https://github.com/Pzthailand/Front-end.git" target="_blank">https://github.com/Pzthailand/Front-end.git</a></p>
+                <p>Back-end : <a href="https://github.com/Pzthailand/Back-end.git" target="_blank">https://github.com/Pzthailand/Back-end.git</a></p>
+            </div>
         </div>
 
         <div className="About-Title">Application  Skill</div>
@@ -62,11 +66,7 @@ function About(){
             <p>Database : Mysql</p>
         </div>
 
-        <div className="About-container" >
-                <img src={Project} />
-            <p>Project : </p>
-        </div>
-
+       
         <div className="About-Title">IT support</div>
 
 
