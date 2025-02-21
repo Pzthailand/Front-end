@@ -17,13 +17,16 @@ import { _Profile } from '../../../../Functions/Auth';
 
 //Modal Style Close 
 import Modal from '../../../../Style/Utility/Modal/Modal'; // Import the Modal component
-
+//ConfirmationModal
+import ConfirmationModal from '../../../../Style/Utility/ModalConfirmation/ConfirmationModal';
 
 const ProductsCarts = () => {
   //Modal Style Close
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalMessage, setModalMessage] = useState('');
+  //ConfirmationModal
+  const [isModalOpen, setIsModalOpen] = useState(null);
 
   const selectUser = (state) => state.user;
   const user = useSelector(selectUser);
@@ -62,18 +65,7 @@ const ProductsCarts = () => {
       });
   };
 
-  const RemoveProductCart = async (id) => {
-    const productid = id;
-    const value = { userid, productid };
-    try {
-      await _ProductAddtocartRemove(value);
-      loadData();
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-
+  
   //Select Product
   const SelectProduct = (shopname , productid, productqty,productname, price, orderqty, shippingcost, file1) => {
     if (productqty === 0) {
@@ -125,7 +117,7 @@ const ProductsCarts = () => {
   const [phone , setPhone]=useState('');
   const [wallet , setWallet]=useState(0);
 
-  console.log('wallet' , wallet);
+  
 
   useEffect(()=>{
     const id = user.id;
@@ -150,6 +142,18 @@ const ProductsCarts = () => {
   const handlePaymentSelect = (event) => {
         setSelectedPaymentMethod(event.target.value);
         console.log(`Selected payment method: ${event.target.value}`);
+  };
+
+
+  const RemoveProductCart = async (id) => {
+    const productid = id;
+    const value = { userid, productid };
+    try {
+      await _ProductAddtocartRemove(value);
+      loadData();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   
@@ -281,6 +285,21 @@ const ProductsCarts = () => {
   }, [selectedProducts]);
 
 
+  // Function to handle item removal
+  const handleRemoveProduct = async (id) => {
+    const productid = id;
+    const value = { userid, productid };
+    console.log(id)
+    try {
+      const res = await _ProductAddtocartRemove(value);
+      setIsModalOpen(null);
+      loadData();
+    } catch (err) {
+      console.log(err);
+    }
+};
+
+
   return (
     <div>
       <h2>Product Cart</h2>
@@ -340,39 +359,30 @@ const ProductsCarts = () => {
 
                     <div className='product-cart-item4'>
 
-                          <div 
-                                className='product-cart-delete' 
-                                role="button" 
-                                tabIndex={0} 
-                                onClick={() => {
-                                  const confirmRemoval = window.confirm("Are you sure you want to remove this item from the cart?");
-                                  if (confirmRemoval) {
-                                      try {
-                                          RemoveProductCart(item.productid);
-                                      } catch (error) {
-                                          console.error("Error removing product from cart:", error);
-                                          alert("There was an issue removing the item. Please try again.");
-                                      }
-                                  }
-                                }} 
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        e.preventDefault(); // Prevent scrolling when pressing space
-                                        const confirmRemoval = window.confirm("Are you sure you want to remove this item from the cart?");
-                                        if (confirmRemoval) {
-                                            try {
-                                                RemoveProductCart(item.productid);
-                                            } catch (error) {
-                                                console.error("Error removing product from cart:", error);
-                                                alert("There was an issue removing the item. Please try again.");
-                                            }
-                                        }
-                                    }
-                                }}  
-                            >
-                                <img style={{ width: 25, height: 25 }} src={Remove} alt="Remove" />
-                            </div> 
-                            
+                    <div
+                        className="product-cart-delete"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => setIsModalOpen(item.productid)} // เปิด modal เฉพาะสินค้าตัวนี้
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setIsModalOpen(item.productid); // เปิด modal เมื่อกด Enter หรือ Space
+                            }
+                        }}
+                    >
+                        <img style={{ width: 25, height: 25 }} src={Remove} alt="Remove" />
+                    </div>
+
+                          {/* Modal Component */}
+                          {isModalOpen === item.productid && (
+                              <ConfirmationModal
+                                  isOpen={true}
+                                  onConfirm={() => handleRemoveProduct(item.productid)} // ลบสินค้า
+                                  onCancel={() => setIsModalOpen(null)} // ปิด modal
+                              />
+                          )}
+                             
                     </div>
           </div>
         </div>
@@ -429,7 +439,8 @@ const ProductsCarts = () => {
                                 onClose={() => setModalOpen(false)} 
                                 title={modalTitle} 
                                 message={modalMessage} 
-                            />  
+                            />
+
     </div>
   );
 };

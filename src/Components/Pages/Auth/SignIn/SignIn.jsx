@@ -58,6 +58,7 @@ function SignIn() {
                         problemstatus : response.data.payload.user.problemstatus
                     }
                     localStorage.setItem('token', response.data.token);
+                    //sessionStorage.setItem('token', response.data.token); // Store token in session storage
                     roleBaseRedirect(response.data.payload.user.role);
                     dispatch(loggedInUsers(userData));
                 })

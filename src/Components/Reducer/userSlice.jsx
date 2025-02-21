@@ -9,6 +9,7 @@ const userSlice = createSlice({
         },
         loggedOutUsers(state) {
             localStorage.removeItem("token");
+            //sessionStorage.removeItem("token");
             return null; // Reset state on logout
         },
         signUpUsers(state, action) {

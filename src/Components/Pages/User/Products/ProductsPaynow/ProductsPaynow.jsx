@@ -91,7 +91,31 @@ const ProductsPaynow = () => {
     })
   },[userid])
 
+  
   const ProductOrder=()=>{
+
+    //Check value
+    if (!user.username){
+      setModalTitle('Error');
+      setModalOpen(true);
+      setModalMessage('Not ready to order')
+      return
+    }
+
+    if(orderqty <= 0){
+      setModalTitle('Error');
+      setModalOpen(true);
+      setModalMessage('Please fill in Order Quantity')
+      return
+    }
+
+    //Limit Order quantity
+    if(orderqty >= 6){
+      setModalTitle('Error');
+      setModalOpen(true);
+      setModalMessage('Order a maximum of 5 products')
+      return
+    }
       
       const payment = selectedPaymentMethod;
       if (selectedPaymentMethod === ''){
@@ -128,7 +152,8 @@ const ProductsPaynow = () => {
         const errorMessage = 'Out of stock'
         setModalTitle('Error');
         setModalOpen(true);
-        setModalMessage(errorMessage)
+        setModalMessage(errorMessage);
+        return
       } else {
 
       if (selectedPaymentMethod === 'Wallet') {

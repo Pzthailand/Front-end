@@ -11,7 +11,7 @@ function App() {
   // Redux
   const dispatch = useDispatch();
   const tokenId = localStorage.getItem('token'); // Get token from local storage
-
+  //const tokenId = sessionStorage.getItem('token'); // Get token from session storage
   useEffect(() => {
     if (tokenId) {
       _CurrentUser(tokenId)

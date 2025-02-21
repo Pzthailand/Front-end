@@ -20,17 +20,29 @@ export const Navbar = () => {
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
 
   //cart
-  const [cart , setCart] = useState([])
+  /*const [cart , setCart] = useState([])
   useEffect(() => {
     if (user && user.cart) {
       setCart(user.cart);
     }
-  }, [user]);
+  }, [user]);*/
 
+
+  const toggleMenu = () => {
+    const navList = document.querySelector('.nav-list');
+    navList.classList.toggle('active');
+  };
 
   return (
     <header>
       <nav>
+        <div className="hamburger" onClick={toggleMenu}>
+          <div style={{cursor:'pointer'}}>&#9776;</div>
+          {/* Hamburger Menu */}
+            <div className="hamburger" onClick={toggleMenu}>
+        </div>
+        </div>
+
         <ul className="nav-list">
           <li><NavLink end to="/UserPage">Home</NavLink></li>
           {/*<li><NavLink to="/News">News</NavLink></li>*/}
