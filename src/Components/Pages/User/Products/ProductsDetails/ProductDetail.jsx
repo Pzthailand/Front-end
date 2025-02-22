@@ -29,7 +29,6 @@ const ProductsDetail = () => {
   const params = useParams();
   const { name } = useParams();
 
-    
   useEffect(() => {
     const LoadData = () => {
       _ProductsName(name)
