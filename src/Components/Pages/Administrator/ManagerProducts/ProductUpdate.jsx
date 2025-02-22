@@ -242,7 +242,7 @@ const ProductUpdate = () => {
 
         <div>
           <label>Current Image 1:</label>
-          {currentimg1 && <img src={`http://127.0.0.1:8081/api/ProductImages/${currentimg1}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
+          {currentimg1 && <img src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${currentimg1}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
         </div>
 
         <div>
@@ -258,7 +258,7 @@ const ProductUpdate = () => {
 
         <div>
           <label>Current Image 2:</label>
-          {currentimg2 && <img src={`http://127.0.0.1:8081/api/ProductImages/${currentimg2}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
+          {currentimg2 && <img src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${currentimg2}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
         </div>
 
         <div>
@@ -273,7 +273,7 @@ const ProductUpdate = () => {
 
         <div>
           <label>Current Image 3:</label>
-          {currentimg3 && <img src={`http://127.0.0.1:8081/api/ProductImages/${currentimg3}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
+          {currentimg3 && <img src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${currentimg3}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
         </div>
 
         <div>
@@ -289,7 +289,7 @@ const ProductUpdate = () => {
 
         <div>
           <label>Current Image 4:</label>
-          {currentimg4 && <img src={`http://127.0.0.1:8081/api/ProductImages/${currentimg4}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
+          {currentimg4 && <img src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${currentimg4}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
         </div>
 
         <div>
@@ -304,7 +304,7 @@ const ProductUpdate = () => {
 
         <div>
           <label>Current Image 5:</label>
-          {currentimg5 && <img src={`http://127.0.0.1:8081/api/ProductImages/${currentimg5}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
+          {currentimg5 && <img src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${currentimg5}`} alt="Old Product" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
         </div>
 
         

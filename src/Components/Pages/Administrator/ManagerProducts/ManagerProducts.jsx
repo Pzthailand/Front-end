@@ -145,7 +145,7 @@ const ManagerProducts = () => {
                         <div className="product-item">{index + indexOfFirstProduct + 1}</div>
                         <div className="product-item"><div>{item._id}</div></div>
                         <div className="product-item">
-                            <img style={{ marginLeft: 0, width: 80, height: 80 }} src={`http://127.0.0.1:8081/api/ProductImages/${item.file1}`} />
+                            <img style={{ marginLeft: 0, width: 80, height: 80 }} src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`} />
                         </div>
                         <div className="product-item">{item.shopname}</div>
                         <div className="product-item">{item.brand}</div>

@@ -207,7 +207,7 @@
                                           <div className="ProductsList">
                                               <div className="card">
                                                   <img
-                                                      src={`http://127.0.0.1:8081/api/ProductImages/${item.file1}`}
+                                                      src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}
                                                       alt={item.name || 'Product image'}
                                                   />
                                                   <p className="productname">{item.productname || 'Unnamed Product'}</p>

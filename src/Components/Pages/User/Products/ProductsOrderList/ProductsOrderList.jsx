@@ -111,7 +111,7 @@ const CancelProductOrder= async (id,productid,price,orderqty,shippingcost)=>{
               
               <div className='product-order-list-item2'>
 
-                  <div><img className='img-product-order-list' src={`http://127.0.0.1:8081/api/ProductImages/${item.file1}`}/></div>
+                  <div><img className='img-product-order-list' src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}/></div>
 
               </div>
               

@@ -320,13 +320,13 @@ const ProductsCarts = () => {
                       {item.productqty ==0 ? //Check out of stock 0 true
                           <img
                             className='product-cart-img-out-of-stock'
-                            src={`http://127.0.0.1:8081/api/ProductImages/${item.file1}`}
+                            src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}
                             alt={item.productname}
                           />
                       : //Check out of stock 0 false
                           <img
                             className='product-cart-img'
-                            src={`http://127.0.0.1:8081/api/ProductImages/${item.file1}`}
+                            src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}
                             alt={item.productname}
                           /> 
                       }

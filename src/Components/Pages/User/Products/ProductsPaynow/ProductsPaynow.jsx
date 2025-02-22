@@ -232,7 +232,7 @@ const ProductsPaynow = () => {
 
         <div className='productpaynowform'>
 
-        <img className='productpaynowimg' src= {`http://127.0.0.1:8081/api/ProductImages/${file1}`}/>
+        <img className='productpaynowimg' src= {`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${file1}`}/>
 
         
         <p style={{wordWrap:'break-word'}}><b>{productname}</b></p>

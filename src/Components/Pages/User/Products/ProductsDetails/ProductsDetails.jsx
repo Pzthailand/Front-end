@@ -116,11 +116,11 @@ const ProductsDetails = () => {
 
   const [slideIndex, setSlideIndex] = useState(0);
   const slides = [
-    { id: 1, src: `http://127.0.0.1:8081/api/ProductImages/${file1}`, alt: 'Image 1' },
-    { id: 2, src: `http://127.0.0.1:8081/api/ProductImages/${file2}`, alt: 'Image 2' },
-    { id: 3, src: `http://127.0.0.1:8081/api/ProductImages/${file3}`, alt: 'Image 3' },
-    { id: 4, src: `http://127.0.0.1:8081/api/ProductImages/${file4}`, alt: 'Image 4' },
-    { id: 5, src: `http://127.0.0.1:8081/api/ProductImages/${file5}`, alt: 'Image 5' },
+    { id: 1, src: `https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${file1}`, alt: 'Image 1' },
+    { id: 2, src: `https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${file2}`, alt: 'Image 2' },
+    { id: 3, src: `https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${file3}`, alt: 'Image 3' },
+    { id: 4, src: `https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${file4}`, alt: 'Image 4' },
+    { id: 5, src: `https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${file5}`, alt: 'Image 5' },
   ];
 
   const handleThumbnailClick = (index) => {
