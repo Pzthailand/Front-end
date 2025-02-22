@@ -79,7 +79,7 @@ export const Navbar = () => {
   
                   {user.file !== 'no_image.jpg' ? (
                         <img 
-                        src={`http://127.0.0.1:8081/api/UserImages/${user.file}`}
+                        src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${user.file}`}
                         alt="Current Profile"
                         className='Profileimage'
                         />

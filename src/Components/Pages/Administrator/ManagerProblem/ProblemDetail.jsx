@@ -80,11 +80,11 @@ const ProblemDetail = () => {
               <div style={{width: 1024 , height:'auto',wordBreak:'break-word'}}>Problem Description : {problemDescription}</div>
           </div>
 
-            <div><img style={{width:1024,height:1024,marginTop:20,marginBottom:10}} src={`http://127.0.0.1:8081/api/ProblemImages/${file1}`}  
+            <div><img style={{width:1024,height:1024,marginTop:20,marginBottom:10}} src={`…/image/upload/f_auto,q_auto/v1/${file1}`}  
                     alt="file1"
                     />
             </div>
-            <div><img style={{width:1024,height:1024,marginTop:20,marginBottom:10}} src={`http://127.0.0.1:8081/api/ProblemImages/${file2}`}  
+            <div><img style={{width:1024,height:1024,marginTop:20,marginBottom:10}} src={`…/image/upload/f_auto,q_auto/v1/${file2}`}  
                     alt="file2"
                     />
             </div>
