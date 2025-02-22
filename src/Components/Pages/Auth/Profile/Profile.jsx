@@ -146,7 +146,7 @@ const Profile = () => {
                     <div>
                         {fileOld !== 'no_image.jpg' ? (
                             <img
-                                src={`http://127.0.0.1:8081/api/UserImages/${fileOld}`}
+                                src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${fileOld}`}
                                 alt='Current Profile'
                                 className='profileimages'
                             />
