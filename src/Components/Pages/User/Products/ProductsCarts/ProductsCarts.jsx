@@ -10,6 +10,7 @@ import {
 //Function
 import { _ProductOrders, _ProductOrdersPaymentByWallet } from '../../../../Functions/ProductOrder';
 //CSS
+import '../../../../Style/User/Products/ProductsCarts/ProductsCartsForm.css';
 import '../../../../Style/User/Products/ProductsCarts/ProductsCarts.css';
 //icon
 import Remove from '../../../../../assets/Products/ProductCart/delete.ico';
