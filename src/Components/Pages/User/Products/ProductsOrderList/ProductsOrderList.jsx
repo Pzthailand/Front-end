@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { _CancelProductOrder, _ProductOrderLists } from '../../../../Functions/ProductOrder'
 
 //CSS
+import '../../../../Style/User/Products/ProductsOrderList/ProductsOrderListForm.css'
 import '../../../../Style/User/Products/ProductsOrderList/ProductsOrderList.css'
 import '../../../../Style/Utility/Pagination.css'
 
@@ -100,26 +101,24 @@ const CancelProductOrder= async (id,productid,price,orderqty,shippingcost)=>{
 
   return (
     <div>
-            <h2>Product Order List</h2>
+            <h2 className='productOrderList-title'>Product Order List</h2>
             
-
           {currentProducts.length != 0 ? '' : 'No Product Order' }
             {currentProducts.map((item,index)=>(
               <div key={index} >
 
               <div className='product-order-list-container'>
 
-              
               <div className='product-order-list-item2'>
 
-                  <div><img className='img-product-order-list' src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}/></div>
+                  <div><img className='img-productOrderList-item2' src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}/></div>
 
               </div>
               
 
               <div className='product-order-list-item3'>
 
-                    <div style={{display:'inline-block', width:400,marginBottom:15,textAlign:'left',wordWrap:'break-word'}}>
+                    <div className='productOrderList-Container-item3'>
                           <div style={{marginLeft:15,marginRight:15,marginTop:10,marginBottom:15}} >Order id : {item._id}</div>
                           <div style={{marginLeft:15,marginRight:15,}} >{item.productname}</div>
                           <div style={{marginLeft:15,marginRight:15}} >Payment : {item.payment}</div>
@@ -191,7 +190,7 @@ const CancelProductOrder= async (id,productid,price,orderqty,shippingcost)=>{
 
                 <div className='product-order-list-item4'>
 
-                    <div style={{display:'inline-block', border:1,width:180,textAlign:'left'}}>
+                    <div className='productOrderList-Container-item4'>
                         <div style={{marginLeft:25,marginRight:15,marginTop:10,float:'right'}} >Status : {item.productorderstatus} </div>
                         <div style={{marginLeft:25,marginRight:15,marginTop:60}} >Quantity : {item.orderqty} </div>
                         <div style={{marginLeft:25,marginRight:15}} >Price : ฿ {(item.price).toLocaleString()} </div>

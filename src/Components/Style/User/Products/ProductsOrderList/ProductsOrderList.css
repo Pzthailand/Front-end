@@ -1,34 +1,60 @@
-.product-order-list-item1 { grid-area: header; }
-.product-order-list-item2 { grid-area: productimg; }
-.product-order-list-item3 { grid-area: main; }
-.product-order-list-item4 { grid-area: right; }
-.product-order-list-item5 { grid-area: footer; }
+.productOrderList-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+}
 
-
-.product-order-list-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'productimg main main main right right';
-  background-color: #f3ebeb;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  cursor: pointer;
+.img-productOrderList-item2 {
+    margin-top: 5px;
+    margin-left: 5px;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 1rem;
+    border: 2px solid black; /* Adjust thickness as needed */
+  }
   
+.productOrderList-Container-item3{
+    display: inline-block;
+    width: 500px;
+    margin-bottom: 15;
+    text-align: left;
+    word-wrap: break-word;
 }
 
-.product-order-list-container > div {
-  /*background-color: rgba(255, 255, 255, 0.5);*/
-  text-align: center;
-  font-size: 13px;
+.productOrderList-Container-item4{
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 15;
+    text-align: left;
+    word-wrap: break-word;
 }
 
-.img-product-order-list {
-  margin-top: 5px;
-  margin-left: 5px;
-  width: 100px;
-  height: 100px;
-  border-radius: 1rem;
-  border: 2px solid black; /* Adjust thickness as needed */
+@media screen and (max-width: 768px) {
+
+    .img-productOrderList-item2 {
+        margin-top: 5px;
+        margin-left: 5px;
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 1rem;
+        border: 2px solid black; /* Adjust thickness as needed */
+      }
+      
+    .productOrderList-Container-item3{
+        display: inline-block;
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 15;
+        text-align: left;
+        word-wrap: break-word;
+    }
+    
+    .productOrderList-Container-item4{
+        display: inline-block;
+        max-width: 150px;
+        margin-bottom: 15;
+        text-align: left;
+        word-wrap: break-word;
+    }
 }
 
