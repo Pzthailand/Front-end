@@ -89,7 +89,8 @@ button {
   :root {
     color: #000000;
     /*background-image: linear-gradient(to bottom right ,rgb(40, 76, 148),rgb(212, 193, 212));*/
-    background-image: linear-gradient(to bottom right ,rgb(0, 110, 255),rgb(247, 136, 247) , rgb(163, 159, 159));
+    /*background-image: linear-gradient(to bottom right ,rgb(0, 110, 255),rgb(247, 136, 247) , rgb(163, 159, 159));*/
+    background-color: whitesmoke;
   
   }
 

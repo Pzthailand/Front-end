@@ -66,35 +66,8 @@
 .product-loadmore:hover {
   color: black;
   background-color: rgb(223, 223, 223);
-}
+} 
 
 @media (max-width: 768px) {
-  .grid-container {
-    grid-template-areas:
-      'header'
-      'menu main main'
-      'footer';
-    grid-template-columns: 1fr; /* Single column layout */
-  }
-
-  .product-form-item1 {
-    /*background-color: white;*/
-    margin-bottom: 15px;
-  }
-
-  .product-form-item2 {
-    background-color: white;
-    float: left;
-    text-align: left;
-    width: 15rem;
-  }
   
-  .product-form-item3 {
-    background-color: white;
-    float: left;
-    text-align: left;
-    width: 36rem;
-  }
 }
-
-

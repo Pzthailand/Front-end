@@ -63,7 +63,7 @@ nav {
 /* Hover Effects for Links */
 .nav-list a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #007bff;
+  color: blueviolet;
 }
 
 /* Focus Styles */
