@@ -25,7 +25,13 @@
 }
 
 .product-cart-item2{
-    max-width: 120px;
+    width: 120px;
+}
+
+@media screen and (max-width:768px) {
+  .product-cart-item2{
+    width: 60px;
+  }
 }
 
 

@@ -426,7 +426,6 @@ const ProductsCarts = () => {
                     </div>
             </div>
 
-    
       </div>
 
       <div className='total'>

@@ -1,116 +1,128 @@
   /*1.check email*/
 
-  .signup-verify-container {
-    display: inline-block;
-    width: 400px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 0px;
-    background-color: #f9f9f9;
-  }
-  
-  .signup-verify-field {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2px;
-  }
-  
-  .signup-verify-label {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  
-  .signup-verify-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    background-color: #fff;
-    outline: none;
-  }
-  
-  .signup-verify-input:hover {
-    border-color: blueviolet;
-  }
-  
-  input[readonly] {
-    background-color: #e9ecef; /* Light gray background for read-only fields */
-  }
-  
-  .signup-verify-button {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 2px;
-    background-color: blueviolet; 
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100px;
-    float: right;
-  }
-  
-  .signup-verify:hover {
-    color: black; 
-  }
-  
-   /*2.verify style in utility*/
-  
-  /*3 sign up*/
-  .signup-container {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: auto auto;
-    background-color: none;
-    background-color: white;
-    border-radius: 0px;
-    padding-left: 50px;
-    padding-right: 120px;
-  }
-  
-  .signup-container div {
-    /*background-color: rgba(255, 255, 255, 0.5);*/
-    font-weight: 500;
-  }
-
-  .signup-container label{
-    float: right;
-    font-size: 12px;
-    font-weight: 500;
-    color: black; 
-  }
-
-  .signup-container input{
-    font-size: 12px;
-    font-weight: 500;
-    height: 35px;
-    width: 300px;
-  }
-
-  .signup-container input:hover{
-   border-color: blueviolet;
-   outline: none; 
-  }
-
-
-.select-gender{
- width: 15px;
- height: 15px;
- cursor: pointer;
+.signup-verify-container {
+display: inline-block;
+width: 400px;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 0px;
+background-color: #f9f9f9;
 }
 
-.gender-label{
-  float: left;
+.signup-verify-field {
+display: flex;
+align-items: center;
+margin-bottom: 2px;
 }
 
-.create-account-button{
-  height: 40px;
-  width: 150px;
+.signup-verify-label {
+margin-right: 10px;
+font-weight: bold;
+}
+
+.signup-verify-input {
+flex: 1;
+width: 100%;
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 2px;
+background-color: #fff;
+outline: none;
+}
+
+.signup-verify-input:hover {
+border-color: blueviolet;
+}
+
+input[readonly] {
+background-color: #e9ecef; /* Light gray background for read-only fields */
+}
+
+.signup-verify-button {
+padding: 8px 10px;
+border: none;
+border-radius: 2px;
+background-color: blueviolet; 
+color: white;
+cursor: pointer;
+transition: background-color 0.3s;
+width: 100px;
+float: right;
+}
+
+.signup-verify-button:hover{
+color: black;
+}
+
+@media screen and (max-width:768px) {
+.signup-verify-container {
+display: inline-block;
+max-width: 300px;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 0px;
+background-color: #f9f9f9;
+}
+}
+
+/*2.verify style in utility*/
+
+/*3 sign up*/
+
+.signup-container {
+  display: inline-block;
+  width: 400px;
+  background-color: white;
+  padding:20px;
+}
+
+.signup-input {
+  width: 95%;
+  height: 35px;
   font-size: 13px;
-  font-weight: 600;
-  background-color: blueviolet;
+  font-weight: 500;
+  color: black;
+  border-radius: 5px;
+}
+
+.signup-input:hover{
+  border-color: blueviolet;
+}
+
+.signup-input-address{
+  width: 95%;
+  height: 100px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.signup-input-address:hover{
+  border-color: blueviolet;
+}
+
+/*Radio*/
+.select-gender{
+  display: inline-block;
+  width: 100%;
+}
+
+.signup-error-message {
+  display: inline-block;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px; /* Slightly adjusts error message vertical position */
+  width: 100%;
+}
+
+.create-account-button {
+  background-color:blueviolet;
   color: white;
-  border-radius: 2px;
-  margin-left: 80px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 100%;
 }
 
 .create-account-button:hover{
@@ -118,20 +130,65 @@
 }
 
 
-.signup-error-message {
-  color: red; /* Change the text color to red */
-  font-size: 11px; /* Slightly smaller font size */
-  margin-top: 2px; /* Add some space above the error message */
-  float: left;
+@media screen and (max-width:768px) {
+  .signup-container {
+    display: inline-block;
+    max-width: 300px;
+    background-color: white;
+    padding:20px;
+  }
+  
+  .signup-input {
+    width: 95%;
+    height: 35px;
+    font-size: 13px;
+    font-weight: 500;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .signup-input:hover{
+    border-color: blueviolet;
+  }
+  
+  .signup-input-address{
+    width: 95%;
+    height: 100px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-input-address:hover{
+    border-color: blueviolet;
+  }
+  
+  /*Radio*/
+  .select-gender{
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .signup-error-message {
+    display: inline-block;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px; /* Slightly adjusts error message vertical position */
+    width: 100%;
+  }
+  
+  .create-account-button {
+    background-color:blueviolet;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .create-account-button:hover{
+    color: black;
+  }
 }
 
-
-/* Optional: Add styles for the input fields to show they have errors */
-input:invalid, textarea:invalid {
-  border: 1px solid red; /* Change border color to red for invalid fields */
-}
-
-input:focus:invalid, textarea:focus:invalid {
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px red; /* Add a shadow effect */
-}

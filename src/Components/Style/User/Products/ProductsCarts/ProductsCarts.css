@@ -127,8 +127,8 @@
         float: left;
         margin-top: 5px;
         margin-left: 5px;
-        width: 100px;
-        height: 100px;
+        max-width: 50px;
+        max-height: 50px;
         border-radius: 1rem;
         border: 2px solid black; /* Adjust thickness as needed */
     }
@@ -138,8 +138,8 @@
       float: left;
       margin-top: 5px;
       margin-left: 5px;
-      width: 100px;
-      height: 100px;
+      max-width: 50px;
+      max-height: 50px;
       border-radius: 1rem;
       border: 2px solid black; /* Adjust thickness as needed */
       opacity: 0.5;
@@ -147,15 +147,14 @@
     
     .product-cart-list{
       display: inline-block;
-      max-width: 200px;
-      width: 100%;
+      max-width: 220px;
       text-align: left;
       word-wrap: break-word;
       margin-left: 20px;
     }
     
     .product-cart-name{
-      font-size: 13px;
+      font-size: 10px;
       margin-left: 15px;
       margin-right: 5px;
       color: black;
@@ -163,7 +162,7 @@
     }
     
     .product-cart-price{
-      font-size: 13px;
+      font-size: 10px;
       margin-top: 30px;
       margin-left: 15px;
       margin-right: 15px;
@@ -172,21 +171,21 @@
     }
     
     .product-cart-shippingcost{
-      font-size: 13px;
+      font-size: 10px;
       margin-left: 15px;
       margin-right: 15px;
       color: gray;
     }
     
     .product-cart-productcartqty{
-      font-size: 13px;
+      font-size: 10px;
       margin-left: 15px;
       margin-right: 15px;
       color: gray;
     }
     
     .product-cart-qty-value{
-      font-size: 13px;
+      font-size: 10px;
       margin-right: 10px;
       width: 40px;
       color: black;

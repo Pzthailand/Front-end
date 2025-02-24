@@ -7,10 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { signUpUsers } from "../../../../Reducer/userSlice";
 // CSS
 import '../../../../Style/Auth/SignUp/SignUp.css';
-//ico
-//import Mark  from '../../../../assets/Pages/Auth/SignUp/mark.ico'
+
 function SignUp_Email() {
-    const { register, handleSubmit, setValue, watch, formState: { errors, isSubmitting } } = useForm();
+    const { register, handleSubmit, setValue, formState: { errors, isSubmitting } } = useForm();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     
@@ -22,7 +21,7 @@ function SignUp_Email() {
         setValue('birthday', today); // Set default date
     }, [setValue]);
 
-        const onSubmit = async (data) => {
+    const onSubmit = async (data) => {
 
         if (data.password !== data.passwordc) {
             alert('Passwords do not match');
@@ -59,14 +58,12 @@ function SignUp_Email() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)} className="signup-container">
-                <div></div>
-                <h1>Sign up</h1>
-                
-                
-                <div><label>Username</label></div>
+        <h1 style={{marginTop:50}}>Sign up</h1>
+        <div className="signup-container">
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <input
+                    <label>Username</label>
+                    <input className="signup-input"
                         type="text"
                         placeholder="Username"
                         {...register('username', {
@@ -78,67 +75,92 @@ function SignUp_Email() {
                         })}
                     />
                 </div>
-                <div></div>
+
+                <div>{errors.username && <p className="signup-error-message">{errors.username.message}</p>}</div>
+
                 <div>
-                    {errors.username &&<p className="signup-error-message">{errors.username.message}</p>}</div>    
-               
-                
-                <div><label>Password</label></div>
-                <div><input type="password"
-                            placeholder="Password" 
-                            {...register('password', { required: 'Password is required' })} /></div>
-                <div></div>
-                <div>{errors.password && <p className="signup-error-message">{errors.password.message}</p>}</div>
-                
-                
-               
-                <div><label>Confirm Password</label></div>
-                <div><input type="password" 
-                            placeholder="Confirm Password"
-                            {...register('passwordc', { required: 'Please confirm your password' })} /></div>
-                <div></div>
-                <div>{errors.passwordc && <p className="signup-error-message">{errors.passwordc.message}</p>}</div>
-               
+                    <label>Password</label>
+                    <input className="signup-input"
+                        type="password"
+                        placeholder="Password" 
+                        {...register('password', { required: 'Password is required' })}
+                    />
+                </div>
+                {errors.password && <p className="signup-error-message">{errors.password.message}</p>}
 
-               
-                <div><label>First Name</label></div>
-                <div><input type="text"
-                            placeholder="First Name" 
-                            {...register('fname', { required: 'First name is required' })} /></div>
-                <div></div>
-                <div>{errors.fname && <p className="signup-error-message">{errors.fname.message}</p>}</div>
-                
+                <div>
+                    <label>Confirm Password</label>
+                    <input className="signup-input"
+                        type="password" 
+                        placeholder="Confirm Password"
+                        {...register('passwordc', { required: 'Please confirm your password' })}
+                    />
+                </div>
+                {errors.passwordc && <p className="signup-error-message">{errors.passwordc.message}</p>}
 
-                
-                <div><label>Last Name</label></div>
-                <div><input type="text"
-                            placeholder="Last Name"
-                            {...register('lname', { required: 'Last name is required' })} /></div>
-                <div></div>
-                <div>{errors.lname && <p className="signup-error-message">{errors.lname.message}</p>}</div>
-                
-               
-                <div><label>Gender</label></div>
-                
-                <div><input style={{width:15,height:15,cursor:'pointer'}} type="radio" {...register('gender' , {required :'gender is required'})}  value="male" />
-                <label style={{marginRight:300}}>Male</label></div>
+                <div>
+                    <label>First Name</label>
+                    <input className="signup-input"
+                        type="text"
+                        placeholder="First Name" 
+                        {...register('fname', { required: 'First name is required' })}
+                    />
+                </div>
+                {errors.fname && <p className="signup-error-message">{errors.fname.message}</p>}
 
-                <div></div>
-                <div><input style={{width:15,height:15,cursor:'pointer'}} type="radio" {...register('gender')} value="female" />
-                <label style={{marginRight:290}}>Female</label></div>
-                <div></div>
-                <div>{errors.gender && <p className="signup-error-message">{errors.gender.message}</p>}</div>
-                
+                <div>
+                    <label>Last Name</label>
+                    <input className="signup-input"
+                        type="text"
+                        placeholder="Last Name"
+                        {...register('lname', { required: 'Last name is required' })}
+                    />
+                </div>
+                {errors.lname && <p className="signup-error-message">{errors.lname.message}</p>}
 
+                <div>
+                    <label>Gender</label>
+
+                <div className="select-gender">
+                <div>
+                        <input
+                            style={{ width: 15, height: 15 , cursor:'pointer'}} 
+                            type="radio"
+                            {...register('gender', { required: 'Gender is required' })}
+                            value="male"
+                        />
+                         <label>Male</label>
+                </div>
+                </div>
+
+                <div className="select-gender">
+                    <div>
+                        <input 
+                            style={{ width: 15, height: 15 , cursor:'pointer'}} 
+                            type="radio"
+                            {...register('gender')}
+                            value="female"
+                        />
+                         <label>Female</label>
+                    </div>
+                </div>
                 
-                <div><label>Birthday</label></div>
-                <div><input type="date" {...register('birthday', { required: 'Birthday is required' })} /></div>
-                <div></div>
-                <div>{errors.birthday && <p className="signup-error-message">{errors.birthday.message}</p>}</div>
-                
+                    
+                </div>
+                {errors.gender && <p className="signup-error-message">{errors.gender.message}</p>}
+
+                <div>
+                    <label>Birthday</label>
+                    <input className="signup-input"
+                        type="date"
+                        {...register('birthday', { required: 'Birthday is required' })}
+                    />
+                </div>
+                {errors.birthday && <p className="signup-error-message">{errors.birthday.message}</p>}
 
                 <div><label>Phone Number</label></div>
-                <div><input type="tel"
+                <input      className="signup-input"
+                            type="tel"
                             maxLength={10}
                             placeholder="099-999-9999" 
                             {...register('phone', { required: 'Phone number is required' ,
@@ -146,46 +168,63 @@ function SignUp_Email() {
                                 value: /^[0-9]+$/,
                                 message: 'Phone Number must contain only letters 0-9'
                                 } 
-                            })} /></div>
-                <div></div>
-                <div>{errors.phone && <p className="signup-error-message">{errors.phone.message}</p>}</div>
-                
+                            })} />
+                {errors.phone && <p className="signup-error-message">{errors.phone.message}</p>}
 
                 
-                <div><label>Address</label></div>
-                <div><textarea  type="text"
-                                maxLength={250}
-                                placeholder="999 Village No.1 Subdistrict, District, Province"
-                                style={{float:"left", marginLeft:5,height:100,width:300}} 
-                                {...register('addres', { required: 'Address is required'})} /></div>
-                <div></div>
-                <div>{errors.address && <p className="signup-error-message">{errors.address.message}</p>}</div>    
-                
 
-                
-                <div><label>Zip Code</label></div>
-                <div><input type="text"
-                            maxLength={5} 
-                            placeholder="Zip code"
-                            {...register('zipcode', { required: 'Zip code is required', 
-                                pattern: {
-                                    value: /^[0-9]+$/, 
-                                    message: 'Username must contain only letters 0-9'
-                                    } 
-                             })} /></div>
-                <div></div>
-                <div>{errors.zipcode && <p className="signup-error-message">{errors.zipcode.message}</p>}</div>
-                
-                <div></div>
+                <div>
+                    <label>Address</label>
+                    <textarea className="signup-input-address"
+                        placeholder="999 Village No.1 Subdistrict, District, Province"
+                        {...register('addres', { required: 'Address is required' })}
+                    />
+                </div>
+                {errors.addres && <p className="signup-error-message">{errors.addres.message}</p>}
+
+                <div>
+                    <label>Zip Code</label>
+                    <input className="signup-input"
+                        type="text"
+                        maxLength={5} 
+                        placeholder="Zip code"
+                        {...register('zipcode', { 
+                            required: 'Zip code is required', 
+                            pattern: {
+                                value: /^[0-9]+$/,
+                                message: 'Zip code must contain only numbers'
+                            }
+                        })}
+                    />
+                </div>
+                {errors.zipcode && <p className="signup-error-message">{errors.zipcode.message}</p>}
+
                 <button type="submit" className="create-account-button" disabled={isSubmitting}>
                     Create Account
                 </button>
             </form>
         </div>
+    </div>
     );
 }
 
 export default SignUp_Email;
+
+
+
+
+
+/*<div><label>Phone Number</label></div>
+<div><input type="tel"
+            maxLength={10}
+            placeholder="099-999-9999" 
+            {...register('phone', { required: 'Phone number is required' ,
+                pattern: {
+                value: /^[0-9]+$/,
+                message: 'Phone Number must contain only letters 0-9'
+                } 
+            })} /></div>
+<div></div>*/
 
 
 

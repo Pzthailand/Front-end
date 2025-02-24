@@ -49,3 +49,57 @@ input[readonly] {
 .account-button:hover {
     color: black; 
 }
+
+@media screen and (max-width:768px) {
+    .account-container {
+        display: inline-block;
+        max-width: 300px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 0px;
+        background-color: #f9f9f9;
+    }
+    
+    .account-field {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+    
+    .account-label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    
+    .account-input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        background-color: #fff;
+        outline: none;
+    }
+    
+    .account-input:hover {
+        border-color: blueviolet;
+    }
+    
+    input[readonly] {
+        background-color: #e9ecef; /* Light gray background for read-only fields */
+    }
+    
+    .account-button {
+        padding: 8px 10px;
+        border: none;
+        border-radius: 2px;
+        background-color: blueviolet; 
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 80px;
+    }
+    
+    .account-button:hover {
+        color: black; 
+    } 
+}
