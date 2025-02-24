@@ -17,8 +17,8 @@ b {
     display: block;
     width: 400px;
     background-color: white;
+    margin-top: 50px;
     padding: 20px;
-    
 }
 
 .productpaynowimg {
@@ -36,7 +36,6 @@ b {
     margin-left: 15px;
     margin-right: 15px;
 }
-
 
 .selectpaynowmethod{
     display: inline-block;

@@ -138,7 +138,7 @@ const ProductsDetails = () => {
       <div className='product-detail-container'>
         <div className='product-detail-item1'>
             
-            <div style={{marginLeft:15,marginRight:15}}>
+            <div style={{marginTop:50,marginLeft:15,marginRight:15}}>
                                       <p><b>Group: </b>{group} {' > '}{type}</p>
                                       <p><b>{productname}</b></p>
                                   </div>

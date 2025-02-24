@@ -35,12 +35,32 @@
 
 .product-detail-item4{
   background-color: rgb(255, 255, 255);
- margin-left: 1px;
+  margin-left: 1px;
 }
 
 .product-detail-item5{
   background-color: rgb(255, 255, 255);
   margin-top: 1px;
+ }
+
+ @media screen and (max-width: 768px) {
+  .product-detail-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'productimg'
+      'right'
+      'main'
+      'footer';
+      /*gap: 2px;*/
+  }
+  
+  .product-detail-container > div {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    text-align: center;
+    font-size: 13px;
+  }
+  
  }
 
 

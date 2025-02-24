@@ -43,4 +43,56 @@
     background-color: #f0f0f0;
     color: blueviolet;
   }
+
+  @media screen and (max-width:768px) {
+    .search-input-product {
+      float: right;
+      max-width: 250px;
+      height: 30px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .search-input-product {
+      float: right;
+      max-width: 250px;
+      height: 30px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  
+    .search-input-product:focus {
+      border-color: blueviolet; /* Changes border color on focus */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Adds a shadow effect on focus */
+      outline: none; /* Removes the default outline */
+  }
+    
+    .results-product {
+      position: absolute;
+      top: 35px; 
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 230px;
+      z-index: 1;
+      font-size: 12px;
+      text-align: left;
+      padding: 20px;
+    }
+    
+    .results-product li {
+      list-style-type: none;
+      cursor: pointer;
+    }
+    
+    .results-product li:hover {
+      background-color: #f0f0f0;
+      color: blueviolet;
+    }
+  }
   
