@@ -360,19 +360,21 @@ const ProductsCarts = () => {
 
                     <div className='product-cart-item4'>
 
-                    <div
-                        className="product-cart-delete"
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => setIsModalOpen(item.productid)} // เปิด modal เฉพาะสินค้าตัวนี้
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault();
-                                setIsModalOpen(item.productid); // เปิด modal เมื่อกด Enter หรือ Space
-                            }
-                        }}
-                    >
-                        <img style={{ width: 25, height: 25 }} src={Remove} alt="Remove" />
+                  
+                        <div
+                            className="product-cart-delete"
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => setIsModalOpen(item.productid)} // เปิด modal เฉพาะสินค้าตัวนี้
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    setIsModalOpen(item.productid); // เปิด modal เมื่อกด Enter หรือ Space
+                                }
+                            }}
+                        >
+                            <img style={{ width: 25, height: 25 }} src={Remove} alt="Remove" />
+                        </div>
                     </div>
 
                           {/* Modal Component */}
@@ -383,8 +385,6 @@ const ProductsCarts = () => {
                                   onCancel={() => setIsModalOpen(null)} // ปิด modal
                               />
                           )}
-                             
-                    </div>
           </div>
         </div>
       ))}

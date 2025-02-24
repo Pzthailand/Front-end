@@ -24,16 +24,3 @@
   font-size: 13px;
 }
 
-.product-cart-item2{
-    width: 120px;
-}
-
-@media screen and (max-width:768px) {
-  .product-cart-item2{
-    width: 60px;
-  }
-}
-
-
-
-
