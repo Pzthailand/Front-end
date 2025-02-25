@@ -39,7 +39,7 @@ function App() {
     <div>
       <Navbar />
       <Routed />
-      <Footer />
+      {/*<Footer />*/}
     </div>
   );
 }

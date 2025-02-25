@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 /*let instance = axios.defaults.baseURL = 'http://127.0.0.1:8081/api';*/
 let instance = axios.defaults.baseURL = 'https://back-end-50tf.onrender.com/api';
 axios.defaults.withCredentials=true

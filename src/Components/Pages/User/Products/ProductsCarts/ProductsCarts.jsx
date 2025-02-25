@@ -300,10 +300,9 @@ const ProductsCarts = () => {
     }
 };
 
-
   return (
     <div>
-      <h2>Product Cart</h2>
+      <h2 style={{marginTop:50}}>Product Cart</h2>
       {userdatacart.map((item, index) => (
         <div key={index}>
           <div className='product-cart-container'>
@@ -318,7 +317,12 @@ const ProductsCarts = () => {
                           SelectProduct(item.shopname,item.productid, item.productqty,item.productname ,item.price, item.quantity, item.shippingcost , item.file1)
                         }
                       />
-                      {item.productqty ==0 ? //Check out of stock 0 true
+                      
+                    </div>
+            </div>
+            <div className='product-cart-item3'>
+
+                    {item.productqty ==0 ? //Check out of stock 0 true
                           <img
                             className='product-cart-img-out-of-stock'
                             src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}
@@ -331,10 +335,9 @@ const ProductsCarts = () => {
                             alt={item.productname}
                           /> 
                       }
-                    </div>
             </div>
 
-            <div className='product-cart-item3'>
+            <div className='product-cart-item4'>
                     <div className='product-cart-list'>
                       <Link to={`/ProductsDetails/${item.productid}`}>
                         <div className='product-cart-name'>Product ID : {item.productid}</div>
@@ -356,11 +359,10 @@ const ProductsCarts = () => {
                         />
                       </div>
                     </div>
-            </div>
+              </div>
 
-                    <div className='product-cart-item4'>
+                    <div className='product-cart-item5'>
 
-                  
                         <div
                             className="product-cart-delete"
                             role="button"
