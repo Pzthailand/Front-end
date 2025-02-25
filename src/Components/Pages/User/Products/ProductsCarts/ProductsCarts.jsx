@@ -69,24 +69,35 @@ const ProductsCarts = () => {
   
   //Select Product
   const SelectProduct = (shopname , productid, productqty,productname, price, orderqty, shippingcost, file1) => {
+
+    //Check input type Checked
     if (productqty === 0) {
-      //alert(`Cannot select product ${productname} Out of stock`);
       setModalOpen(true);
       setModalTitle('Error');
       setModalMessage(`Cannot select product ${productname} Out of stock`);
       return;
     }
+
+    if(orderqty >= 6){
+      setModalOpen(true);
+      setModalTitle('Error');
+      setModalMessage('Maximum 5 Product');
+      return;
+    }
+
     if (productqty < orderqty){
       setModalOpen(true);
       setModalTitle('Error');
       setModalMessage('Not enough product');
       return;
     }
+    //Check input type Checked
+
     setSelectedProducts((prev) => {
       const newSelected = [...prev];
       const existingProductIndex = newSelected.findIndex(product => product.productid === productid);
 
-        if (existingProductIndex !== -1) {
+      if (existingProductIndex !== -1) {
         // Deselect if already selected
         newSelected.splice(existingProductIndex, 1);
         console.log(`Deselected: ${productid}`);
@@ -144,7 +155,7 @@ const ProductsCarts = () => {
         setSelectedPaymentMethod(event.target.value);
         console.log(`Selected payment method: ${event.target.value}`);
   };
-
+  
 
   const RemoveProductCart = async (id) => {
     const productid = id;
@@ -158,7 +169,7 @@ const ProductsCarts = () => {
   };
 
   
-  const ProductOrders = async () => {
+  const ProductOrders = async () => {    
           if(selectedProducts.length === 0){
             setModalOpen(true);
             setModalTitle('Error');
@@ -170,7 +181,7 @@ const ProductsCarts = () => {
             setModalTitle('Error');
             setModalMessage('Please select Payment Medthod')
             return;
-          }     
+          } 
 
           if (selectedPaymentMethod === 'Wallet') {
                             const value = {
@@ -312,7 +323,7 @@ const ProductsCarts = () => {
                       <input 
                         className='selectproduct'
                         type='checkbox'
-                        checked={item.productqty == 0  ? false : null || item.productqty < item.quantity ? false : null} //fase check product out of stock  
+                        checked={item.productqty == 0  ? false : null || item.productqty < item.quantity ? false : null || item.quantity >=6 ? false : null } //fase check product out of stock  
                         onChange={(e) =>
                           SelectProduct(item.shopname,item.productid, item.productqty,item.productname ,item.price, item.quantity, item.shippingcost , item.file1)
                         }

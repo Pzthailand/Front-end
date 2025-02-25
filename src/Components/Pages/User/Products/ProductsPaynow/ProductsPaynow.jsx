@@ -99,14 +99,14 @@ const ProductsPaynow = () => {
       setModalTitle('Error');
       setModalOpen(true);
       setModalMessage('Not ready to order')
-      return
+      return;
     }
 
     if(orderqty <= 0){
       setModalTitle('Error');
       setModalOpen(true);
       setModalMessage('Please fill in Order Quantity')
-      return
+      return;
     }
 
     //Limit Order quantity
@@ -114,23 +114,29 @@ const ProductsPaynow = () => {
       setModalTitle('Error');
       setModalOpen(true);
       setModalMessage('Order a maximum of 5 products')
-      return
+      return;
     }
       
       const payment = selectedPaymentMethod;
       if (selectedPaymentMethod === ''){
-        alert('Please select Payment Medthod')
+        setModalOpen(true);
+        setModalTitle('Error');
+        setModalMessage('Please select Payment Medthod')
         return;
       }
 
       if (addres === ''){
-        alert('Please enter a valid address')
+        setModalOpen(true);
+        setModalTitle('Error');
+        setModalMessage('Please fill in address')
         navigate('/Profile')
         return;
       }
 
       if (zipcode === '' ) {
-        alert('Please enter a valid 5-digit zipcode');
+        setModalOpen(true);
+        setModalTitle('Error');
+        setModalMessage('Please fill in zipcdode')
         navigate('/Profile');
         return;
       }
@@ -138,22 +144,18 @@ const ProductsPaynow = () => {
       const phonePattern = /^0\d{9}$/;  // Regular Expression สำหรับเบอร์โทรไทย
 
       if (!phonePattern.test(phone)) {
-        alert('Please enter a valid phone number');
+        setModalOpen(true);
+        setModalTitle('Error');
+        setModalMessage('Please fill in phone number')
         navigate('/Account');
         return;
       }
       
-      /*if (productqty === 0) {
-          alert('Out of stock')
-      }*/  
-
       if (productqty < orderqty){
-        //alert('Out of stock')
-        const errorMessage = 'Out of stock'
         setModalTitle('Error');
         setModalOpen(true);
-        setModalMessage(errorMessage);
-        return
+        setModalMessage('Out of stock');
+        return;
       } else {
 
       if (selectedPaymentMethod === 'Wallet') {
