@@ -35,6 +35,7 @@ const Profile = () => {
     const [modalMessage, setModalMessage] = useState('');
     const [uploadProgress, setUploadProgress] = useState(0);
 
+
     useEffect(() => {
         const loadData = async () => {
             setLoading(true);

@@ -77,7 +77,7 @@ const VerifyemailOTP = () => {
         .then(res=>{
           setInputOtp(res.data.user.otp) //Set OTP
         }).catch(err=>{
-          console.log(err)
+          alert(err.response.data);
         })
     }
 

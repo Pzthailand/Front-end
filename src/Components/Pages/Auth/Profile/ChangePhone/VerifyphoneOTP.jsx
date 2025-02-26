@@ -36,7 +36,7 @@ const VerifyphoneOTP = () => {
           }
           dispatch(verifyPhoneOTP(userData));
         }).catch(err=>{
-          console.log(err)
+          alert(err.response.data);
         })
     },[])
    
