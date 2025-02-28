@@ -8,17 +8,25 @@
     import '../../../../Style/User/Products/Products/ProductsSearch.css'
 
 
+    //Loading
+    import LoadingModal from '../../../../Style/Utility/Loading/LoadingModal.jsx'
+
+
     // Function
     import { _ProductsType } from "../../../../Functions/Products"
 
 
     function Products() {
+      
       const [data, setData] = useState([]);
       const [visibleCount, setVisibleCount] = useState(10);
       const [selectedType, setSelectedType] = useState('');
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState('');
       const [searchTerm , setSearchTerm] = useState('');
+
+      //Loading
+      const [isLoading, setIsLoading] = useState(true);
 
 
       const filteredProducts = data
@@ -50,11 +58,12 @@
         try {
           const res = await _ProductsType(value);
           setData(res.data);
+          setIsLoading(false);
         } catch (err) {
           setError('Failed to load products. Please try again later.');
           console.error(err);
         } finally {
-          setLoading(false);  
+          setIsLoading(false);
         }
       };
 
@@ -195,8 +204,8 @@
                   </div>
         
                   <div className="product-form-item3">
-                
-                          {loading && <p>Loading products...</p>}
+            
+                          {/*{loading && <p>Loading products...</p>}*/}
                           {error && <p className="error">{error}</p>}
                           {data.length === 0 && !loading && <p>No products available.</p>}
                           {data
@@ -242,14 +251,13 @@
                               ))}*/}
                     
               </div>
-
               <div className="product-form-item4"> 
                 
                             {data.length > visibleCount && (
                               <button className= "product-loadmore" onClick={loadMore}>LOAD MORE</button>
                             )}    
-                      
               </div>
+              <LoadingModal isOpen={isLoading} />
           </div>
         </div>
       );
