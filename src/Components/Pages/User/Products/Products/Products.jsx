@@ -7,16 +7,16 @@
     import '../../../../Style/User/Products/Products/Products.css'
     import '../../../../Style/User/Products/Products/ProductsSearch.css'
 
-
     //Loading
     import LoadingModal from '../../../../Style/Utility/Loading/LoadingModal.jsx'
-
 
     // Function
     import { _ProductsType } from "../../../../Functions/Products"
 
-
     function Products() {
+
+      //Loading
+      const [isLoading, setIsLoading] = useState(true);
       
       const [data, setData] = useState([]);
       const [visibleCount, setVisibleCount] = useState(10);
@@ -24,10 +24,6 @@
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState('');
       const [searchTerm , setSearchTerm] = useState('');
-
-      //Loading
-      const [isLoading, setIsLoading] = useState(true);
-
 
       const filteredProducts = data
       .map(item => item.productname)
@@ -205,7 +201,6 @@
         
                   <div className="product-form-item3">
             
-                          {/*{loading && <p>Loading products...</p>}*/}
                           {error && <p className="error">{error}</p>}
                           {data.length === 0 && !loading && <p>No products available.</p>}
                           {data
@@ -227,8 +222,8 @@
                                   </div>
                               ))}
 
-                          {/*{loading && <p>Loading products...</p>}
-                          {error && <p className="error">{error}</p>}
+                          
+                          {/*{error && <p className="error">{error}</p>}
                           {data.length === 0 && !loading && <p>No products available.</p>}
                           {data
                               .filter(item => item.productname.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -239,7 +234,7 @@
                                           <div className="ProductsList">
                                               <div className="card">
                                                   <img
-                                                      src={`http://127.0.0.1:8081/api/ProductImages/${item.file1}`}
+                                                      src={`https://res.cloudinary.com/dwc9pksvu/image/upload/f_auto,q_auto/v1/${item.file1}`}
                                                       alt={item.name || 'Product image'}
                                                   />
                                                   <p className="productname">{item.productname || 'Unnamed Product'}</p>
